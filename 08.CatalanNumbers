@@ -1,0 +1,53 @@
+using System;
+using System.Numerics;
+
+class Catalan
+{
+  static void Main()
+    {
+        //input
+        Console.Write("Enter number for n factoriel ");
+        Console.Write("in the range 1<n<100:");
+        int numN = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        if ((numN== 1) || (numN >= 100))
+        {
+            Console.WriteLine("Invalide range!");
+            Console.WriteLine("\n");
+            return;
+        }
+        int num2N=0;
+        num2N = 2 * numN;
+        BigInteger factorielN = 1;
+        BigInteger factoriel2N = 1;
+        BigInteger factorielN1=1;
+        //Factorial of sum of the numbers n and 1.
+        double quotientNNN1 = 0;  //quotient of (2n)! and (n+1)!*n!.
+        int sumN1=0;          // The sum of n and 1.
+        //logic
+        for (int i = 1, j=1; i <=num2N;j++,i++)
+        {
+            factoriel2N = factoriel2N * i;
+            if (j <=numN)
+            {
+                factorielN = factorielN * j;
+            }
+        }
+        sumN1=numN+1;
+        for (int i = 1; i <=sumN1; i++)
+			{
+			 factorielN1=factorielN1*i;
+			}
+        quotientNNN1 = (double)factoriel2N / ((double)factorielN * ((double)factorielN1));
+        //output
+        Console.WriteLine("{0}", quotientNNN1);
+        Console.WriteLine("\n");
+    }
+}
+
+
+
+
+
+    
+
