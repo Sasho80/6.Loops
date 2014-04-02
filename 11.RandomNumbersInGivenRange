@@ -1,0 +1,39 @@
+using System;
+
+class RandomNumbers
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of checked figures: n=");
+        int numN = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        if (numN<=0)
+        {
+            Console.WriteLine("Invalid range!");
+            Console.WriteLine("\n");
+            return;
+        }
+        Console.Write("Enter the maximum value of the numbers:max=");
+        int numMax = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        Console.Write("Enter the minimum value of the numbers:min=");
+        Console.Write("(in the range min<=max):min=");
+        int numMin = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        if (numMin > numMin)
+        {
+            Console.WriteLine("Invalid range!");
+            Console.WriteLine("\n");
+            return;
+        }
+        Random rand = new Random();
+        for (int i = 1; i <=numN; i++)
+        {
+            int randomNumber = rand.Next(numMin,numMax+1);
+                Console.Write("{0} ", randomNumber);
+        }
+        Console.WriteLine("\n");
+      
+    }
+}
+
