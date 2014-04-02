@@ -20,7 +20,7 @@ class RandomNumbers
         Console.Write("(in the range min<=max):min=");
         int numMin = int.Parse(Console.ReadLine());
         Console.WriteLine("\n");
-        if (numMin > numMin)
+        if (numMin > numMax)
         {
             Console.WriteLine("Invalid range!");
             Console.WriteLine("\n");
