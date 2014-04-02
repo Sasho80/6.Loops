@@ -1,0 +1,65 @@
+using System;
+
+class Product
+{
+    static void Main()
+    {
+        //input
+        Console.Write("Enter the numbers of numbers n:");
+        int numN=int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        if (numN <= 1)
+        {
+            Console.WriteLine("Invalid range!");
+            Console.WriteLine("\n");
+            return;
+        }
+        int []num= new int[numN];
+        Console.WriteLine("Enter numbers in the array num[]:");
+        for (int i = 0; i <numN; i++)
+        {
+            num[i]=int.Parse(Console.ReadLine());
+        }
+        Console.WriteLine("\n");
+
+        int oddProduct = 0;
+        oddProduct = num[0];
+        //In terms of the task set, the first element is always odd.
+        int evenProduct = 0;
+        evenProduct = num[1];
+        //In terms of the task set, the second element is always even.
+        int productN = 0;
+        //logic
+        for (int i = 2; i < numN; i++)
+        {
+            if (i % 2 == 0)
+            {
+                oddProduct *= num[i];
+            }
+            else
+            {
+                evenProduct *= num[i];
+            }
+        }
+        //output
+        for (int i = 0; i < numN; i++)
+        {
+            Console.Write("{0} ", num[i]);
+        }
+        Console.WriteLine("\n");
+
+        if (evenProduct == oddProduct)
+        {
+            productN = oddProduct;
+            Console.WriteLine("Yes product={0}", productN);
+        }
+        else
+        {
+            Console.WriteLine("No \nodd_product={0}",oddProduct);
+            Console.WriteLine("even_product={0}",evenProduct);
+        }
+        Console.WriteLine("\n");
+        
+    }
+}
+
