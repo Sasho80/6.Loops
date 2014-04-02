@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        for (int i = 2; i <=14; i++)
+        {
+            for (int j = 1; j <=1; j++)
+            {
+                switch (i)
+                {
+                    case 2: Console.WriteLine("{0}{1} {0}{2} {0}{3}\n{0}{4}", i, ((char)5),((char)4),((char)3),((char)6));
+                        break;
+                    case 3: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 4: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 5: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 6: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 7: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 8: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 9: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 10: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 11: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'J', ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 12: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'Q', ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 13: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'K', ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                    case 14: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'A', ((char)5), ((char)4), ((char)3), ((char)6));
+                        break;
+                 }
+             }
+            Console.WriteLine("\n");
+        }
+    }
+
+}
+
