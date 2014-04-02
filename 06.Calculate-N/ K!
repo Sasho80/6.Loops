@@ -1,0 +1,46 @@
+using System;
+
+class Calculate2Factoriel
+{
+    static void Main()
+    {
+        //input
+        Console.Write("Enter number for n factoriel ");
+        Console.Write("in the range 1<k<n<100:");
+        int numN = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        if (numN<= 2 || (numN >= 100))
+        {
+            Console.WriteLine("Invalide range!");
+            Console.WriteLine("\n");
+            return;
+        }
+        Console.Write("Enter number for k factoriel ");
+        Console.Write("in the range 1<k<n<100:");
+        int numK = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        if ((1 >=numK)||(numK>=100)||(numK>numN ))
+        {
+            Console.WriteLine("Invalid range.");
+            Console.WriteLine("\n");
+            return;
+        }
+        int factorielN = 1;
+        int factorielK = 1;
+        double devisionNK = 0;
+        //logic
+        for (int i = 1, j=1; i <=numN;j++,i++)
+        {
+            factorielN = factorielN * i;
+            if (j <=numK)
+            {
+                factorielK = factorielK * j;
+            }
+        }
+        devisionNK =(double) factorielN /(double) factorielK;
+        //output
+        Console.WriteLine("{0}", devisionNK);
+        Console.WriteLine("\n");
+    }
+}
+
