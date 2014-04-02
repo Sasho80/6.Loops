@@ -1,0 +1,59 @@
+using System;
+
+class OperationsWithNumbers
+{
+    static void Main()
+    {
+        //input
+        Console.Write("Enter the number of numbers: n =");
+        int numN = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        if (numN <= 0 || numN == 1)
+        {
+            Console.WriteLine("Invalid Range!");
+            Console.WriteLine("\n");
+            return;
+        }
+        int[] numArray = new int[numN];
+        int numMax = 0;
+        int refMax = 0;
+        int refMin = 0;
+        int oldMin = 0;
+        double numSum = 0;
+        double numAvg = 0;
+
+        Console.WriteLine("Enter {0} numbers:", numN);
+        for (int i = 0; i < numN; i++)
+        {
+            numArray[i] = int.Parse(Console.ReadLine());
+        }
+        //logic
+        oldMin = numArray[0];
+        //Take a value from an array of standard minimum.
+        for (int i = 0, j = numN - 1; i < numN; i++)
+        {
+            refMax = Math.Max(numArray[i], numArray[j]);
+            if (refMax > numMax)
+            {
+                numMax = refMax;
+            }
+            refMin = Math.Min(numArray[i], numArray[j]);
+            if (oldMin>refMin)
+            {
+                oldMin = refMin;
+            }
+        }
+        for (int i = 0; i < numN; i++)
+        {
+            numSum += numArray[i];
+        }
+        numAvg=numSum/numN;
+        //output
+        Console.WriteLine("max={0}", numMax);
+        Console.WriteLine("min={0}", oldMin);
+        Console.WriteLine("sum={0}",numSum);
+        Console.WriteLine("Avg={0:F2}",numAvg);
+    }
+}
+
