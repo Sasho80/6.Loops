@@ -1,0 +1,30 @@
+using System;
+
+class CalculateNFactorielDividedKFactoriel
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter n and k(1<k<n<100):");
+        int n = int.Parse(Console.ReadLine());
+        int k = int.Parse(Console.ReadLine());
+        int Factorial = 1;
+        double quotientFactoriel = 0;
+        int nFactorial = 1;
+        if (k < 1||k > n||k > 100|| n < 1 || n > 100)
+        {
+            Console.WriteLine("Invalid input!");
+            return;
+        }
+        for (int i = 1,j=1; i <=n; i++, j++)
+        {
+            Factorial *= i;
+            if (j<=k)
+            {
+              nFactorial *= j;  
+            }
+        }
+        quotientFactoriel = Factorial / nFactorial;
+        Console.WriteLine(quotientFactoriel);
+    }
+}
+
