@@ -1,0 +1,52 @@
+using System;
+
+class DecimalToHexadecimalNumber
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter decimal number:");
+        long decimalNum = long.Parse(Console.ReadLine());
+        if (decimalNum<0)
+        {
+            Console.WriteLine("Invalid input!");
+            return;
+        }
+        string hex = " ";
+        bool check = (decimalNum != 0);
+        long remainder = 0;
+        string convertRemainder = " ";
+        if (decimalNum == 0)
+        {
+            hex += (remainder).ToString();
+        }
+        while (check)
+        {
+            remainder = decimalNum % 16;
+            switch (remainder.ToString())
+            {
+                case "10": convertRemainder = "A";
+                    break;
+                case "11": convertRemainder = "B";
+                    break;
+                case "12": convertRemainder = "C";
+                    break;
+                case "13": convertRemainder = "D";
+                    break;
+                case "14": convertRemainder = "E";
+                    break;
+                case "15": convertRemainder = "F";
+                    break;
+                default: convertRemainder = Convert.ToString(remainder.ToString());
+                    break;     
+            }
+            hex += convertRemainder;
+            decimalNum = decimalNum / 16;
+            check = (decimalNum != 0);
+        }
+        char[] hexNum = hex.ToCharArray();
+        Array.Reverse(hexNum);
+        string result = new string(hexNum);
+        Console.WriteLine(result);
+    }
+}
+
