@@ -1,53 +1,35 @@
 using System;
 using System.Numerics;
 
-class Catalan
+class CatalanNumbers
 {
-  static void Main()
+    static void Main()
     {
-        //input
-        Console.Write("Enter number for n factoriel ");
-        Console.Write("in the range 1<n<100:");
-        int numN = int.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        if ((numN== 1) || (numN >= 100))
+        Console.WriteLine("Enter n (1<n<100):");
+        int n = int.Parse(Console.ReadLine());
+        if (n>100||n<0)
         {
-            Console.WriteLine("Invalide range!");
-            Console.WriteLine("\n");
+            Console.WriteLine("Invalid input!");
             return;
         }
-        int num2N=0;
-        num2N = 2 * numN;
-        BigInteger factorielN = 1;
-        BigInteger factoriel2N = 1;
-        BigInteger factorielN1=1;
-        //Factorial of sum of the numbers n and 1.
-        double quotientNNN1 = 0;  //quotient of (2n)! and (n+1)!*n!.
-        int sumN1=0;          // The sum of n and 1.
-        //logic
-        for (int i = 1, j=1; i <=num2N;j++,i++)
+        BigInteger twoNFactorial=1;
+        BigInteger nFactorial=1;
+        BigInteger nPlusOneFactorial = 1;
+        BigInteger CatalanNum = 0;
+        for (int i = 1,j=1,k=1; i <=2*n; i++,j++,k++)
         {
-            factoriel2N = factoriel2N * i;
-            if (j <=numN)
+            twoNFactorial *= i;
+            if (j<=n)
             {
-                factorielN = factorielN * j;
+              nFactorial *= j;  
+            }
+            if (k<=n+1)
+            {
+                nPlusOneFactorial *= k; 
             }
         }
-        sumN1=numN+1;
-        for (int i = 1; i <=sumN1; i++)
-			{
-			 factorielN1=factorielN1*i;
-			}
-        quotientNNN1 = (double)factoriel2N / ((double)factorielN * ((double)factorielN1));
-        //output
-        Console.WriteLine("{0}", quotientNNN1);
-        Console.WriteLine("\n");
+        CatalanNum = twoNFactorial/((nPlusOneFactorial) * nFactorial);
+        Console.WriteLine(CatalanNum);
     }
 }
-
-
-
-
-
-    
 
