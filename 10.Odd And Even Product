@@ -1,65 +1,37 @@
 using System;
 
-class Product
+class OddAndEvenProduct
 {
     static void Main()
     {
-        //input
-        Console.Write("Enter the numbers of numbers n:");
-        int numN=int.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        if (numN <= 1)
+        Console.WriteLine("Enter n integers separated by a space:");
+        string[] str = Console.ReadLine().Split();
+        int productOdd = 1;
+        int productEven = 1;
+        for (int i = 0; i < str.Length; i++)
         {
-            Console.WriteLine("Invalid range!");
-            Console.WriteLine("\n");
-            return;
-        }
-        int []num= new int[numN];
-        Console.WriteLine("Enter numbers in the array num[]:");
-        for (int i = 0; i <numN; i++)
-        {
-            num[i]=int.Parse(Console.ReadLine());
-        }
-        Console.WriteLine("\n");
-
-        int oddProduct = 0;
-        oddProduct = num[0];
-        //In terms of the task set, the first element is always odd.
-        int evenProduct = 0;
-        evenProduct = num[1];
-        //In terms of the task set, the second element is always even.
-        int productN = 0;
-        //logic
-        for (int i = 2; i < numN; i++)
-        {
-            if (i % 2 == 0)
+            if (i%2==0)
             {
-                oddProduct *= num[i];
+                int elementOdd = Convert.ToInt32(str[i]);
+                productOdd *= elementOdd;
             }
             else
             {
-                evenProduct *= num[i];
+                int elementEven = Convert.ToInt32(str[i]);
+                productEven *= elementEven;
             }
         }
-        //output
-        for (int i = 0; i < numN; i++)
+        if (productEven==productOdd)
         {
-            Console.Write("{0} ", num[i]);
-        }
-        Console.WriteLine("\n");
-
-        if (evenProduct == oddProduct)
-        {
-            productN = oddProduct;
-            Console.WriteLine("Yes product={0}", productN);
+            Console.WriteLine("Yes");
+            Console.WriteLine("product={0}",productOdd);
         }
         else
         {
-            Console.WriteLine("No \nodd_product={0}",oddProduct);
-            Console.WriteLine("even_product={0}",evenProduct);
+            Console.WriteLine("No");
+            Console.WriteLine("odd_product={0}",productOdd);
+            Console.WriteLine("even_product={0}",productEven);
         }
-        Console.WriteLine("\n");
-        
     }
 }
 
