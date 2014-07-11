@@ -1,46 +1,47 @@
 using System;
 
-class Program
+class PrintADeckOf52Cards
 {
     static void Main()
     {
-        for (int i = 2; i <=14; i++)
+        int[] notation = new int[4]{5,4,3,6};
+        for (int row = 1; row <=13; row++)
         {
-            for (int j = 1; j <=1; j++)
+            for (int i=0; i <4; i++)
             {
-                switch (i)
+                int col = notation[i];
+                switch (row)
                 {
-                    case 2: Console.WriteLine("{0}{1} {0}{2} {0}{3}\n{0}{4}", i, ((char)5),((char)4),((char)3),((char)6));
+                    case 1: Console.Write("2"+(char)col+" ");
                         break;
-                    case 3: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 2: Console.Write("3" + (char)col + " ");
                         break;
-                    case 4: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 3: Console.Write("4" + (char)col + " ");
                         break;
-                    case 5: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 4: Console.Write("5" + (char)col + " ");
                         break;
-                    case 6: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 5: Console.Write("6" + (char)col + " ");
                         break;
-                    case 7: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 6: Console.Write("7" + (char)col + " ");
                         break;
-                    case 8: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 7: Console.Write("8" + (char)col + " ");
                         break;
-                    case 9: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 8: Console.Write("9" + (char)col + " ");
                         break;
-                    case 10: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", i, ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 9: Console.Write("10" + (char)col + " ");
                         break;
-                    case 11: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'J', ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 10: Console.Write("J" + (char)col + " ");
                         break;
-                    case 12: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'Q', ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 11: Console.Write("Q" + (char)col + " ");
                         break;
-                    case 13: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'K', ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 12: Console.Write("K" + (char)col + " ");
                         break;
-                    case 14: Console.WriteLine("{0}{1} {0}{2} {0}{3} \n{0}{4}", 'A', ((char)5), ((char)4), ((char)3), ((char)6));
+                    case 13: Console.Write("A" + (char)col + " ");
                         break;
-                 }
-             }
-            Console.WriteLine("\n");
+                }
+            }
+            Console.WriteLine();
         }
     }
-
 }
 
