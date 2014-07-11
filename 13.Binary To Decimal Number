@@ -1,0 +1,20 @@
+using System;
+
+class BinaryToDecimalNumber
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter binary number:");
+        string binary = Console.ReadLine();
+        int lengthNum = binary.Length-1;
+        long num = 0;
+        long decimalNum=0;
+        for (int i = lengthNum, j=0; i>= 0; i--,j++)
+        {
+            num = Convert.ToInt64(binary[i].ToString());
+            decimalNum += num * (long)Math.Pow(2, j);
+        }
+        Console.WriteLine(decimalNum);
+    }
+}
+
