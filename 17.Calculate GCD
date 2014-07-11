@@ -1,0 +1,28 @@
+using System;
+
+class CalculateGCD
+{
+    static void Main()
+    {
+        int a = int.Parse(Console.ReadLine());
+        int b = int.Parse(Console.ReadLine());
+        int[] divisor = new int[a];
+        for (int i = 1,k=0; i <=a; i++,k++)
+        {
+            if (a%i==0&&b%i==0)
+            {
+                divisor[k] = i;
+            }
+        }
+        int maxDivisor = divisor[0];
+        for (int j = 0; j < a; j++)
+        {
+            if (maxDivisor<divisor[j])
+            {
+                maxDivisor = divisor[j];
+            } 
+        }
+        Console.WriteLine(maxDivisor);
+    }
+}
+
