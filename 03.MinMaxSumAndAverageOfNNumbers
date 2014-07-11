@@ -1,59 +1,41 @@
 using System;
 
-class OperationsWithNumbers
+class MinMaxSumAndAverageOfNNumbers
 {
     static void Main()
     {
-        //input
-        Console.Write("Enter the number of numbers: n =");
-        int numN = int.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-
-        if (numN <= 0 || numN == 1)
+        Console.WriteLine("Enter a integer:");
+        int n = int.Parse(Console.ReadLine());
+        if (n <= 0)
         {
-            Console.WriteLine("Invalid Range!");
-            Console.WriteLine("\n");
+            Console.WriteLine("Invalid input!");
             return;
         }
-        int[] numArray = new int[numN];
-        int numMax = 0;
-        int refMax = 0;
-        int refMin = 0;
-        int oldMin = 0;
-        double numSum = 0;
-        double numAvg = 0;
-
-        Console.WriteLine("Enter {0} numbers:", numN);
-        for (int i = 0; i < numN; i++)
+        int []num=new int[n];
+        int sum = 0;
+        Console.WriteLine("Enter {0} integer:",n);
+        for (int i = 0; i < n; i++)
         {
-            numArray[i] = int.Parse(Console.ReadLine());
+            num[i] = int.Parse(Console.ReadLine());
+            sum = sum + num[i];
         }
-        //logic
-        oldMin = numArray[0];
-        //Take a value from an array of standard minimum.
-        for (int i = 0, j = numN - 1; i < numN; i++)
+        int min = num[0];
+        int max = num[0];
+        for (int i = 0; i < n; i++)
         {
-            refMax = Math.Max(numArray[i], numArray[j]);
-            if (refMax > numMax)
+            if (min>num[i])
             {
-                numMax = refMax;
+                min = num[i];
             }
-            refMin = Math.Min(numArray[i], numArray[j]);
-            if (oldMin>refMin)
+            if (max<num[i])
             {
-                oldMin = refMin;
+                max = num[i];
             }
         }
-        for (int i = 0; i < numN; i++)
-        {
-            numSum += numArray[i];
-        }
-        numAvg=numSum/numN;
-        //output
-        Console.WriteLine("max={0}", numMax);
-        Console.WriteLine("min={0}", oldMin);
-        Console.WriteLine("sum={0}",numSum);
-        Console.WriteLine("Avg={0:F2}",numAvg);
+        Console.WriteLine("min={0}",min);
+        Console.WriteLine("max={0}",max);
+        Console.WriteLine("sum={0}",sum);
+        Console.WriteLine("avg={0:F2}",(double)sum/n);
     }
 }
 
