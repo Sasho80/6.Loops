@@ -4,25 +4,19 @@ class CalculateGCD
 {
     static void Main()
     {
+        Console.WriteLine("Enter two integer a and b:");
         int a = int.Parse(Console.ReadLine());
         int b = int.Parse(Console.ReadLine());
-        int[] divisor = new int[a];
-        for (int i = 1,k=0; i <=a; i++,k++)
+        int quotient = 0;
+        int remainder = 1;
+        while (remainder!=0)
         {
-            if (a%i==0&&b%i==0)
-            {
-                divisor[k] = i;
-            }
+            remainder = a % b;
+            quotient = a / b;
+            a = b;
+            b = remainder;
         }
-        int maxDivisor = divisor[0];
-        for (int j = 0; j < a; j++)
-        {
-            if (maxDivisor<divisor[j])
-            {
-                maxDivisor = divisor[j];
-            } 
-        }
-        Console.WriteLine(maxDivisor);
+        Console.WriteLine(a);
     }
 }
 
