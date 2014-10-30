@@ -4,18 +4,12 @@ class NumbersFrom1ToN
 {
     static void Main()
     {
-        Console.WriteLine("Enter a positive integer:");
+        Console.WriteLine("Enter an integer:");
         int n = int.Parse(Console.ReadLine());
-        if (n<=0)
-        {
-            Console.WriteLine("Invalid input!");
-            return;
-        }
         for (int i = 1; i <=n; i++)
         {
-            Console.Write(i+" ");
+            Console.Write("{0} ",i);
         }
         Console.WriteLine();
     }
 }
-
