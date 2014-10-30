@@ -5,31 +5,30 @@ class CatalanNumbers
 {
     static void Main()
     {
-        Console.WriteLine("Enter n (1<n<100):");
+        Console.WriteLine("Enter an integer in the range (1 < n < 100):");
         int n = int.Parse(Console.ReadLine());
-        if (n>100||n<0)
+        BigInteger Factorial2N = 1;
+        BigInteger FactorialN = 1;
+        BigInteger FacturialNPlus1 = 1;
+        if (n == 1 || n >= 100)
         {
             Console.WriteLine("Invalid input!");
             return;
         }
-        BigInteger twoNFactorial=1;
-        BigInteger nFactorial=1;
-        BigInteger nPlusOneFactorial = 1;
-        BigInteger CatalanNum = 0;
-        for (int i = 1,j=1,k=1; i <=2*n; i++,j++,k++)
+        for (int i = 1; i <=2*n; i++)
         {
-            twoNFactorial *= i;
-            if (j<=n)
+            Factorial2N *= i;
+            if (i<=n)
             {
-              nFactorial *= j;  
-            }
-            if (k<=n+1)
-            {
-                nPlusOneFactorial *= k; 
+                FactorialN*= i;
             }
         }
-        CatalanNum = twoNFactorial/((nPlusOneFactorial) * nFactorial);
-        Console.WriteLine(CatalanNum);
+        for (int i = 1; i <=n+1; i++)
+        {
+            FacturialNPlus1 *= i;
+        }
+        Console.WriteLine("{0}", Factorial2N / (FactorialN *
+        FacturialNPlus1));
     }
 }
 
