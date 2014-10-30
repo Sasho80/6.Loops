@@ -4,40 +4,32 @@ class PrintADeckOf52Cards
 {
     static void Main()
     {
-        int[] notation = new int[4]{5,4,3,6};
-        for (int row = 1; row <=13; row++)
+        for (int i = 2; i <=14; i++)
         {
-            for (int i=0; i <4; i++)
+            for (int j = 5; j < 7; j--)
             {
-                int col = notation[i];
-                switch (row)
+                if (i < 11)
                 {
-                    case 1: Console.Write("2"+(char)col+" ");
+                    Console.Write("{0}{1} ", i, (char)j);
+                }
+                switch (i)
+                {
+                    case 11: Console.Write("J{0} ", (char)j);
                         break;
-                    case 2: Console.Write("3" + (char)col + " ");
+                    case 12: Console.Write("Q{0} ", (char)j);
                         break;
-                    case 3: Console.Write("4" + (char)col + " ");
+                    case 13: Console.Write("K{0} ", (char)j);
                         break;
-                    case 4: Console.Write("5" + (char)col + " ");
+                    case 14: Console.Write("A{0} ", (char)j);
                         break;
-                    case 5: Console.Write("6" + (char)col + " ");
-                        break;
-                    case 6: Console.Write("7" + (char)col + " ");
-                        break;
-                    case 7: Console.Write("8" + (char)col + " ");
-                        break;
-                    case 8: Console.Write("9" + (char)col + " ");
-                        break;
-                    case 9: Console.Write("10" + (char)col + " ");
-                        break;
-                    case 10: Console.Write("J" + (char)col + " ");
-                        break;
-                    case 11: Console.Write("Q" + (char)col + " ");
-                        break;
-                    case 12: Console.Write("K" + (char)col + " ");
-                        break;
-                    case 13: Console.Write("A" + (char)col + " ");
-                        break;
+                }
+                if (j == 3)
+                {
+                    j = 7;
+                }
+                if (j == 6)
+                {
+                    break;
                 }
             }
             Console.WriteLine();
