@@ -4,34 +4,33 @@ class OddAndEvenProduct
 {
     static void Main()
     {
-        Console.WriteLine("Enter n integers separated by a space:");
-        string[] str = Console.ReadLine().Split();
-        int productOdd = 1;
-        int productEven = 1;
-        for (int i = 0; i < str.Length; i++)
+        Console.WriteLine("Enter integers with a space between them:");
+        string[] num = Console.ReadLine().Split();
+        int sumOdd = 1;
+        int sumEven = 1;
+        for (int i = 0; i < num.Length; i++)
         {
             if (i%2==0)
             {
-                int elementOdd = Convert.ToInt32(str[i]);
-                productOdd *= elementOdd;
+                sumOdd *= Convert.ToInt32(num[i]);
             }
             else
             {
-                int elementEven = Convert.ToInt32(str[i]);
-                productEven *= elementEven;
+                sumEven *= Convert.ToInt32(num[i]);
             }
         }
-        if (productEven==productOdd)
+        if (sumEven==sumOdd)
         {
-            Console.WriteLine("Yes");
-            Console.WriteLine("product={0}",productOdd);
+            Console.WriteLine("yes");
+            Console.WriteLine("product={0}",sumOdd);
         }
         else
         {
-            Console.WriteLine("No");
-            Console.WriteLine("odd_product={0}",productOdd);
-            Console.WriteLine("even_product={0}",productEven);
+            Console.WriteLine("no");
+            Console.WriteLine("odd_product={0}", sumOdd);
+            Console.WriteLine("even_product={0}", sumEven);
         }
     }
 }
+
 
