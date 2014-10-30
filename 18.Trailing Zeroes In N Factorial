@@ -1,20 +1,19 @@
 using System;
-using System.Numerics;
 
 class TrailingZeroesInNFactorial
 {
     static void Main()
     {
-        int n = int.Parse(Console.ReadLine());
-        BigInteger trailingZeroes = 0;
-        BigInteger Factorial=1;
-        for (int i = 1; i <=n; i++)
-        {
-            trailingZeroes+=(BigInteger)( n /Math.Pow(5, i));
-            Factorial *= i;
-        }
-        Console.WriteLine(Factorial);
-        Console.WriteLine(trailingZeroes);
+       Console.WriteLine("Enter an integer:");
+       int n=int.Parse(Console.ReadLine());
+       int k = 0;
+       int trailingZero = 0;
+       while (Math.Pow(5,k)<n)
+       {
+           k++;
+           trailingZero +=n/(int)(Math.Pow(5, k));
+       }
+       Console.WriteLine(trailingZero);
     }
 }
 
