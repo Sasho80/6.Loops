@@ -4,31 +4,25 @@ class DecimalToBinaryNumber
 {
     static void Main()
     {
-        Console.WriteLine("Enter decimal number:");
-        long decimalNum = long.Parse(Console.ReadLine());
-        if (decimalNum<0)
-        {
-            Console.WriteLine("Invalid input!");
-            return;
-        }
-        string binary=" ";
-        bool check=(decimalNum!=0);
-        long remainder = 0;
-        if (decimalNum==0)
-        {
-            binary += (remainder).ToString(); 
-        }
-        while (check)
-        { 
-          remainder=decimalNum%2;
-          binary += (remainder).ToString();
-          decimalNum = decimalNum / 2;
-          check = (decimalNum != 0);
-        }
-        char[] binaryNum = binary.ToCharArray();
-        Array.Reverse(binaryNum);
-        string result = new string(binaryNum);
-        Console.WriteLine(result);
+       Console.WriteLine("Enter an integer:");
+       long decimalNum=long.Parse(Console.ReadLine());
+       string binary = string.Empty;
+       long result =0;
+       long quotient = 1;
+       while (quotient!=0)
+       {
+          result = decimalNum % 2;
+          quotient=decimalNum / 2;
+          binary += result.ToString();
+          decimalNum = quotient;
+       }
+       char []valueChars=binary.ToCharArray();
+       Array.Reverse(valueChars);
+       for (int i = 0; i < binary.Length; i++)
+       {
+           Console.Write("{0}",valueChars[i]);
+       }
+       Console.WriteLine();
     }
 }
 
