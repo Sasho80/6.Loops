@@ -4,30 +4,25 @@ class MinMaxSumAndAverageOfNNumbers
 {
     static void Main()
     {
-        Console.WriteLine("Enter a integer:");
+        Console.WriteLine("Enter the number of numbers:");
         int n = int.Parse(Console.ReadLine());
-        if (n <= 0)
-        {
-            Console.WriteLine("Invalid input!");
-            return;
-        }
         int []num=new int[n];
         int sum = 0;
-        Console.WriteLine("Enter {0} integer:",n);
         for (int i = 0; i < n; i++)
         {
-            num[i] = int.Parse(Console.ReadLine());
-            sum = sum + num[i];
+            Console.WriteLine("Enter an integer:");
+            num[i] =int.Parse(Console.ReadLine());
+            sum += num[i];
         }
         int min = num[0];
         int max = num[0];
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 1; i < n; i++)
+        {   
             if (min>num[i])
             {
                 min = num[i];
             }
-            if (max<num[i])
+            if (max < num[i])
             {
                 max = num[i];
             }
@@ -35,7 +30,7 @@ class MinMaxSumAndAverageOfNNumbers
         Console.WriteLine("min={0}",min);
         Console.WriteLine("max={0}",max);
         Console.WriteLine("sum={0}",sum);
-        Console.WriteLine("avg={0:F2}",(double)sum/n);
+        Console.WriteLine("average={0:F2}", (double)sum/n);
     }
 }
 
